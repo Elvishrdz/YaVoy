@@ -8,7 +8,7 @@ import androidx.compose.ui.unit.dp
 
 fun cardMinHeight() = 50.dp
 
-fun cardContentPadding() = 5.dp
+fun cardContentPadding() = 8.dp
 
 @Composable
 fun cardElevation() = CardDefaults.elevatedCardElevation(
