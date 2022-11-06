@@ -27,7 +27,7 @@ import com.eahm.theme.compose.theme.DeliveryTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ProductItem() {
+fun ProductItem(title: String, label: String, onClicked: () -> Unit) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -37,9 +37,7 @@ fun ProductItem() {
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.primaryContainer,
         ),
-        onClick = {
-            // TODO: implement onClick
-        },
+        onClick = onClicked,
     ) {
         Row(
             modifier = Modifier
@@ -58,12 +56,12 @@ fun ProductItem() {
 
             TextCardH1(
                 modifier = Modifier.weight(1f),
-                text = "Gallo pinto con queso",
+                text = title,
             )
 
             RowSpacerCardSmall()
 
-            TextCardB1(text = "C$ 2,350.50")
+            TextCardB1(text = label)
         }
     }
 }
@@ -72,6 +70,9 @@ fun ProductItem() {
 @Composable
 fun PreviewProductItem() {
     DeliveryTheme {
-        ProductItem()
+        ProductItem(
+            title = "Gallopinto con queso",
+            label = "C$ 149.50"
+        ) {}
     }
 }

@@ -9,7 +9,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.eahm.theme.compose.theme.DeliveryTheme
+import com.eahm.theme.compose.AppThemeSurface
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -24,7 +24,7 @@ class ProductFragment : Fragment() {
     ): View {
         return ComposeView(requireContext()).apply {
             setContent {
-                DeliveryTheme {
+                AppThemeSurface {
                     val state by viewModel.state.collectAsState()
 
                     ProductScreen(

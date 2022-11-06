@@ -15,13 +15,17 @@ private val LightColorPalette = lightColorScheme(
     onPrimary = black,
     primaryContainer = white,
     onPrimaryContainer = primary,
+    surface = white,
+    onSurface = primaryLight,
 )
 
 private val DarkColorPalette = darkColorScheme(
     primary = primaryDark,
     onPrimary = white,
     primaryContainer = licorice,
-    onPrimaryContainer = primaryDark,
+    onPrimaryContainer = primaryLight,
+    surface = black,
+    onSurface = primary,
 )
 
 @Composable

@@ -9,10 +9,12 @@ import com.eahm.theme.compose.preview.PreviewConfig.Companion.GROUP_THEMES
     group = GROUP_THEMES,
     name = "light theme",
     uiMode = UI_MODE_NIGHT_NO,
+    showBackground = true,
 )
 @Preview(
     group = GROUP_THEMES,
     name = "dark theme",
     uiMode = UI_MODE_NIGHT_YES,
+    showBackground = true,
 )
 annotation class ThemesPreview
