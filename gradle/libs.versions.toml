@@ -1,0 +1,13 @@
+[versions]
+# Define the dependency versions
+kotlin = "1.7.10"
+
+[libraries]
+# Define the libraries
+kotlin_lib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+android_core = 'androidx.core:core-ktx:1.7.0'
+app_compat = 'androidx.appcompat:appcompat:1.5.1'
+
+[bundles]
+# Define bundles/groups of libraries
+base = ["kotlin_lib", "android.core", "app.compat"]

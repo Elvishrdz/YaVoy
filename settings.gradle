@@ -1,0 +1,24 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+    versionCatalogs {
+        // declares an additional catalog
+        material {
+            from(files('gradle/material.versions.toml'))
+        }
+    }
+}
+rootProject.name = "Delivery"
+include ':app'
+include ':feature-product-management'
+enableFeaturePreview("VERSION_CATALOGS")

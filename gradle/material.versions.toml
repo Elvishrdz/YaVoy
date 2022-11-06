@@ -1,0 +1,12 @@
+[versions]
+# Define the dependency versions
+material3 = "1.0.0"
+
+[libraries]
+# Define the libraries
+compose_material_3 = { module = "androidx.compose.material3:material3", version.ref = "material3" }
+compose_material_3_window_size = { module = "androidx.compose.material3:material3-window-size-class", version.ref = "material3" }
+
+[bundles]
+# Define bundles/groups of libraries
+material3 = ["compose.material.3", "compose.material.3.window.size"]
