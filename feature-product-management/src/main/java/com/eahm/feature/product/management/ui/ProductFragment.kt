@@ -1,13 +1,15 @@
-package com.eahm.feature.product.management
+package com.eahm.feature.product.management.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.compose.material3.Text
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.eahm.delivery.framework.presentation.compose.theme.DeliveryTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -22,7 +24,13 @@ class ProductFragment : Fragment() {
     ): View {
         return ComposeView(requireContext()).apply {
             setContent {
-                Text(text = "product fragment is visible!")
+                DeliveryTheme {
+                    val state by viewModel.state.collectAsState()
+
+                    ProductScreen(
+                        state = state,
+                    )
+                }
             }
         }
     }
