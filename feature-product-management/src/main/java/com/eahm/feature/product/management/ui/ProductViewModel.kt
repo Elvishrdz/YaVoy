@@ -3,6 +3,7 @@ package com.eahm.feature.product.management.ui
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.eahm.feature.product.management.data.ProductState
+import com.eahm.feature.product.management.data.ProductState.*
 import com.eahm.feature.product.management.repository.ProductRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
@@ -15,31 +16,35 @@ class ProductViewModel @Inject constructor(
     private val productRepository: ProductRepository,
 ) : ViewModel() {
 
-    internal var state: MutableStateFlow<ProductState> = MutableStateFlow(ProductState.Loading)
+    internal var state: MutableStateFlow<ProductState> = MutableStateFlow(Loading)
         private set
 
     init {
-        state.value = ProductState.Loading
+        setLoadingState()
     }
 
     fun getProductList() {
+        setLoadingState()
+
         viewModelScope.launch {
             val productList = productRepository.getProductList()
 
             delay(5000) // TODO: remove delay
 
-            if (productList.isNotEmpty()) {
-                state.value = ProductState.Data(
-                    productList = listOf(
-                        "producto 1",
-                        "producto 2",
-                        "producto 3",
-                        "producto 4",
-                    ),
-                )
-            } else {
-                state.value = ProductState.Error
-            }
+            state.value = productList?.let {
+                if (it.isEmpty()) {
+                    EmptyList
+
+                } else {
+                    Data(
+                        productList = productList,
+                    )
+                }
+            } ?: Error
         }
+    }
+
+    private fun setLoadingState() {
+        state.value = Loading
     }
 }

@@ -10,13 +10,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.eahm.delivery.framework.presentation.compose.theme.DeliveryTheme
 import com.eahm.feature.product.management.data.ProductState
+import com.eahm.feature.product.management.data.ProductState.*
 
 @Composable
 internal fun ProductScreen(
     state: ProductState,
 ) {
     when (state) {
-        ProductState.Loading -> {
+        Loading -> {
             Box(
                 modifier = Modifier
                     .fillMaxSize(),
@@ -25,12 +26,7 @@ internal fun ProductScreen(
                 CircularProgressIndicator()
             }
         }
-        is ProductState.Data -> {
-            ProductList(
-                list = state.productList,
-            )
-        }
-        ProductState.Error -> {
+        Error -> {
             Box(
                 modifier = Modifier
                     .fillMaxSize(),
@@ -38,6 +34,14 @@ internal fun ProductScreen(
             ) {
                 Text(text = "Error")
             }
+        }
+        EmptyList -> {
+            // TODO: add empty list screen
+        }
+        is Data -> {
+            ProductList(
+                list = state.productList,
+            )
         }
     }
 }
@@ -47,7 +51,7 @@ internal fun ProductScreen(
 fun PreviewProductScreen() {
     DeliveryTheme {
         ProductScreen(
-            state = ProductState.Loading,
+            state = Loading,
         )
     }
 }

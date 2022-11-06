@@ -8,14 +8,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.eahm.delivery.framework.presentation.compose.theme.DeliveryTheme
+import com.eahm.feature.product.management.data.model.Product
+import com.eahm.feature.product.management.data.remote.fake.FakeDataSource
 
 @Composable
-fun ProductList(list: List<String>) {
+fun ProductList(list: List<Product>) {
     LazyColumn(
         verticalArrangement = Arrangement.spacedBy(7.dp)
     ) {
         items(list) {
-            Text(text = it)
+            Text(text = it.title)
         }
     }
 }
@@ -25,12 +27,7 @@ fun ProductList(list: List<String>) {
 fun PreviewProductList() {
     DeliveryTheme {
         ProductList(
-            list = listOf(
-                "test 1",
-                "test 2",
-                "test 3",
-                "test 4",
-            )
+            list = FakeDataSource.fakeProductList,
         )
     }
 }
