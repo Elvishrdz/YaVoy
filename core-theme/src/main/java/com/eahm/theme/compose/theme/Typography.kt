@@ -1,4 +1,4 @@
-package com.eahm.delivery.framework.presentation.compose.theme
+package com.eahm.theme.compose.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
@@ -51,7 +51,7 @@ val typography = Typography(
         letterSpacing = 0.1.sp
     ),
     titleSmall = TextStyle(
-        fontWeight = FontWeight.W500,
+        fontWeight = FontWeight.W300,
         fontSize = 14.sp,
         lineHeight = 20.sp,
         letterSpacing = 0.1.sp

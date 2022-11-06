@@ -7,7 +7,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.eahm.delivery.framework.presentation.compose.theme.DeliveryTheme
+import com.eahm.theme.compose.theme.DeliveryTheme
 import com.eahm.feature.product.management.data.model.Product
 import com.eahm.feature.product.management.data.remote.fake.FakeDataSource
 

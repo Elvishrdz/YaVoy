@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.eahm.delivery.framework.presentation.compose.theme.DeliveryTheme
+import com.eahm.theme.compose.theme.DeliveryTheme
 import com.eahm.feature.product.management.data.ProductState
 import com.eahm.feature.product.management.data.ProductState.*
 

@@ -1,13 +1,10 @@
-package com.eahm.delivery.framework.presentation.compose.theme
+package com.eahm.theme.compose.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import com.eahm.theme.compose.theme.primary
-import com.eahm.theme.compose.theme.primaryDark
-import com.eahm.theme.compose.theme.white
 
 /**
  * more information about material 3:
@@ -15,12 +12,16 @@ import com.eahm.theme.compose.theme.white
  */
 private val LightColorPalette = lightColorScheme(
     primary = primary,
-    onPrimary = white,
+    onPrimary = black,
+    primaryContainer = white,
+    onPrimaryContainer = primary,
 )
 
 private val DarkColorPalette = darkColorScheme(
     primary = primaryDark,
     onPrimary = white,
+    primaryContainer = licorice,
+    onPrimaryContainer = primaryDark,
 )
 
 @Composable

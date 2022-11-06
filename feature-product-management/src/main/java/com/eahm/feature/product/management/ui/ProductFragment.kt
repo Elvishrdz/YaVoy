@@ -9,7 +9,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.eahm.delivery.framework.presentation.compose.theme.DeliveryTheme
+import com.eahm.theme.compose.theme.DeliveryTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
