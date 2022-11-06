@@ -22,3 +22,4 @@ rootProject.name = "Delivery"
 include ':app'
 include ':feature-product-management'
 enableFeaturePreview("VERSION_CATALOGS")
+include ':core-theme'

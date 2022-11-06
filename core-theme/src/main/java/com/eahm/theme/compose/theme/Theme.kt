@@ -5,9 +5,9 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import com.eahm.delivery.compose.theme.primary
-import com.eahm.delivery.compose.theme.primaryDark
-import com.eahm.delivery.compose.theme.white
+import com.eahm.theme.compose.theme.primary
+import com.eahm.theme.compose.theme.primaryDark
+import com.eahm.theme.compose.theme.white
 
 /**
  * more information about material 3:

@@ -1,4 +1,4 @@
-package com.eahm.delivery.compose.theme
+package com.eahm.theme.compose.theme
 
 import androidx.compose.ui.graphics.Color
 

@@ -1,4 +1,4 @@
-package com.eahm.delivery.compose
+package com.eahm.theme.compose
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height

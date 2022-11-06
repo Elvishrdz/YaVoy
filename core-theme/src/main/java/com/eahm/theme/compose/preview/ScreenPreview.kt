@@ -1,4 +1,4 @@
-package com.eahm.delivery.compose.preview
+package com.eahm.theme.compose.preview
 
 @FontScalePreview
 @ThemesPreview

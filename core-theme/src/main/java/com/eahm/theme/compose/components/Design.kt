@@ -1,4 +1,4 @@
-package com.eahm.delivery.compose.components
+package com.eahm.theme.compose.components
 
 import android.content.res.Configuration
 import androidx.compose.foundation.background
@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.eahm.delivery.compose.preview.PreviewConfig
+import com.eahm.theme.compose.preview.PreviewConfig
 import com.eahm.delivery.framework.presentation.compose.theme.DeliveryTheme
 
 @Preview(

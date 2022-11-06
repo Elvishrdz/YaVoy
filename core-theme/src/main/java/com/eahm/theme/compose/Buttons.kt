@@ -1,10 +1,10 @@
-package com.eahm.delivery.compose
+package com.eahm.theme.compose
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import com.eahm.delivery.compose.preview.ScreenPreview
+import com.eahm.theme.compose.preview.ScreenPreview
 
 @Composable
 fun ButtonDefault(

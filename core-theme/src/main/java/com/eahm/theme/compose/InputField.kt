@@ -1,4 +1,4 @@
-package com.eahm.delivery.compose
+package com.eahm.theme.compose
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding

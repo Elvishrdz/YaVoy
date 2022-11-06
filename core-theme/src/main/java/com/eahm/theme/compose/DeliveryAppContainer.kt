@@ -1,4 +1,4 @@
-package com.eahm.delivery.compose
+package com.eahm.theme.compose
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
