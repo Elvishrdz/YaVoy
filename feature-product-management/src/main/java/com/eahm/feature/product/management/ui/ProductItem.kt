@@ -6,9 +6,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -16,6 +14,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.Dp
 import com.eahm.feature.product.management.R
+import com.eahm.theme.compose.cardColors
 import com.eahm.theme.compose.cardContentPadding
 import com.eahm.theme.compose.cardElevation
 import com.eahm.theme.compose.cardMinHeight
@@ -33,10 +32,7 @@ fun ProductItem(title: String, label: String, onClicked: () -> Unit) {
             .fillMaxWidth()
             .heightIn(min = cardMinHeight(), max = Dp.Infinity),
         elevation = cardElevation(),
-        shape = MaterialTheme.shapes.medium,
-        colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.primaryContainer,
-        ),
+        colors = cardColors(),
         onClick = onClicked,
     ) {
         Row(
