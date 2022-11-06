@@ -26,7 +26,7 @@ import com.eahm.theme.compose.theme.DeliveryTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ProductItem(title: String, label: String, onClicked: () -> Unit) {
+fun ProductItem(title: String, label: String? = null, onClicked: () -> Unit) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -57,7 +57,9 @@ fun ProductItem(title: String, label: String, onClicked: () -> Unit) {
 
             RowSpacerCardSmall()
 
-            TextCardB1(text = label)
+            label?.let {
+                TextCardB1(text = it)
+            }
         }
     }
 }

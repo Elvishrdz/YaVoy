@@ -12,6 +12,7 @@ import androidx.compose.ui.res.stringResource
 import com.eahm.feature.product.management.R
 import com.eahm.feature.product.management.data.model.Product
 import com.eahm.feature.product.management.data.remote.fake.FakeDataSource
+import com.eahm.feature.product.management.getPriceWithCurrency
 import com.eahm.theme.compose.AppThemeSurface
 import com.eahm.theme.compose.fonts.TextFontH1
 import com.eahm.theme.compose.preview.ScreenPreview
@@ -42,7 +43,7 @@ fun ProductList(list: List<Product>) {
         items(list) {
             ProductItem(
                 title = it.title,
-                label = "C$ ${it.price}", // TODO: display price currency
+                label = it.price.getPriceWithCurrency(),
             ) {}
         }
     }

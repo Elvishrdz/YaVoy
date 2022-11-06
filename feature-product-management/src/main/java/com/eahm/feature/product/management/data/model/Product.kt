@@ -9,7 +9,7 @@ data class Product(
     val title: String,
     val description: String,
     val photos: List<ProductImage> = listOf(),
-    val price: Float,
+    val price: Price,
     val priceUnitType: PriceUnitType = PriceUnitType.UNKNOWN,
     val providerId: String,
     val updated_at: Long,
@@ -20,4 +20,24 @@ data class Product(
     override fun toString(): String {
         return "$title\n$description\n$price / $priceUnitType"
     }
+}
+
+@Parcelize
+data class Price(
+    val currentPriceValueId: String,
+    val priceValues: List<PriceValue>,
+) : Parcelable
+
+@Parcelize
+data class PriceValue(
+    val id: String,
+    val value: Double,
+    val currency: Currency,
+) : Parcelable
+
+@Parcelize
+enum class Currency : Parcelable {
+    CORDOBA,
+    DOLLAR,
+    EURO,
 }
