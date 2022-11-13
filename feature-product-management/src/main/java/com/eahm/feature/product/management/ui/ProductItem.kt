@@ -73,7 +73,7 @@ fun PreviewProductItem() {
         DeliveryTheme {
             ProductItem(
                 title = it.title,
-                label = it.price.getPriceWithCurrency(),
+                label = null // TODO: it.price?.getPriceWithCurrency(),
             ) {}
         }
     }

@@ -7,18 +7,19 @@ import kotlinx.android.parcel.Parcelize
 data class Product(
     val id: String,
     val title: String,
-    val description: String,
-    val photos: List<ProductImage> = listOf(),
-    val price: Price,
-    val priceUnitType: PriceUnitType = PriceUnitType.UNKNOWN,
+    val description: String? = null,
+    /*val photos: List<ProductImage> = listOf(),
+    val price: Price? = null,
+    val priceUnitType: PriceUnitType = PriceUnitType.UNKNOWN,*/
     val providerId: String,
-    val updated_at: Long,
-    val created_at: Long,
-    val status: ProductStatus = ProductStatus.UNDEFINED
+   /* val updated_at: Long? = null,
+    val created_at: Long? = null,
+    val status: ProductStatus = ProductStatus.UNDEFINED*/
 ) : Parcelable {
 
     override fun toString(): String {
-        return "$title\n$description\n$price / $priceUnitType"
+        return "$title\n$description"
+        //return "$title\n$description\n$price / $priceUnitType"
     }
 }
 

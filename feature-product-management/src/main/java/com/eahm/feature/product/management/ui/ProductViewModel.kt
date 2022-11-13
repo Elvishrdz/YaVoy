@@ -6,7 +6,6 @@ import com.eahm.feature.product.management.data.ProductState
 import com.eahm.feature.product.management.data.ProductState.*
 import com.eahm.feature.product.management.repository.ProductRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -27,9 +26,9 @@ class ProductViewModel @Inject constructor(
         setLoadingState()
 
         viewModelScope.launch {
-            val productList = productRepository.getProductList()
-
-            delay(5000) // TODO: remove delay
+            val productList = productRepository.getProductList(
+                customerId = "kWqfigrvSXUEoSiV46sVeR8zA6o1", // TODO: provide customerID
+            )
 
             state.value = productList?.let {
                 if (it.isEmpty()) {
