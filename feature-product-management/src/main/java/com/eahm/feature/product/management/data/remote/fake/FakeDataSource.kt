@@ -1,15 +1,15 @@
 package com.eahm.feature.product.management.data.remote.fake
 
-import com.eahm.feature.product.management.data.model.*
+import com.eahm.feature.product.management.data.model.Product
 
 object FakeDataSource {
 
-    val fakeProductList = listOf(
+    val fakeProductList = listOf<Product>(
         Product(
             id = "1",
             title = "Test product 1",
             description = "This is a nice test product",
-            photos = listOf(),
+            /*photos = listOf(),
             price = Price(
                 currentPriceValueId = "A1",
                 priceValues = listOf(
@@ -20,17 +20,17 @@ object FakeDataSource {
                     ),
                 ),
             ),
-            priceUnitType = PriceUnitType.UNIT,
+            priceUnitType = PriceUnitType.UNIT,*/
             providerId = "1",
-            updated_at = 0,
+            /*updated_at = 0,
             created_at = 0,
-            status = ProductStatus.AVAILABLE,
+            status = ProductStatus.AVAILABLE,*/
         ),
         Product(
             id = "2",
             title = "Test product 2",
             description = "This is a nice test product",
-            photos = listOf(),
+            /*photos = listOf(),
             price = Price(
                 currentPriceValueId = "B1",
                 priceValues = listOf(
@@ -41,11 +41,11 @@ object FakeDataSource {
                     ),
                 ),
             ),
-            priceUnitType = PriceUnitType.UNIT,
+            priceUnitType = PriceUnitType.UNIT,*/
             providerId = "2",
-            updated_at = 0,
+            /*updated_at = 0,
             created_at = 0,
-            status = ProductStatus.AVAILABLE,
+            status = ProductStatus.AVAILABLE,*/
         )
     )
 }

@@ -29,6 +29,7 @@ class ProductFragment : Fragment() {
 
                     ProductScreen(
                         state = state,
+                        gotoProductCreationClicked = {},
                     )
                 }
             }

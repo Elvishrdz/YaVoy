@@ -81,4 +81,7 @@ dependencies {
     // Jetpack Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:2.5.3"
     implementation "androidx.navigation:navigation-ui-ktx:2.5.3"
+
+    // Timber
+    debugImplementation 'com.jakewharton.timber:timber:5.0.1'
 }

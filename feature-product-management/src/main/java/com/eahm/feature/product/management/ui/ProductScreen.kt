@@ -8,13 +8,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.eahm.theme.compose.theme.DeliveryTheme
 import com.eahm.feature.product.management.data.ProductState
 import com.eahm.feature.product.management.data.ProductState.*
+import com.eahm.theme.compose.theme.DeliveryTheme
 
 @Composable
 internal fun ProductScreen(
     state: ProductState,
+    gotoProductCreationClicked: () -> Unit,
 ) {
     when (state) {
         Loading -> {
@@ -41,6 +42,7 @@ internal fun ProductScreen(
         is Data -> {
             ProductList(
                 list = state.productList,
+                gotoProductCreationClicked = gotoProductCreationClicked,
             )
         }
     }
@@ -52,6 +54,7 @@ fun PreviewProductScreen() {
     DeliveryTheme {
         ProductScreen(
             state = Loading,
+            gotoProductCreationClicked = {},
         )
     }
 }
