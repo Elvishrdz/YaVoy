@@ -14,18 +14,28 @@ object CoreModule {
     @Provides
     @Singleton
     fun provideBaseUrl(): String {
-        val baseUrl = "https://us-central1-framework-3632d.cloudfunctions.net/"
-
         return when {
             BuildConfig.DEBUG && USE_LOCALHOST -> {
-                // Configure the Local Emulator
-                "https://10.0.2.2//framework-3632d/us-central1/"
+                // TODO: you need to declare android:usesCleartextTraffic="true" in your application tag in the manifest
+                val localhost = if (USE_LOCALHOST) {
+                    // Localhost server must be running to make api calls
+                    LOCALHOST
+
+                } else {
+                    // for local emulators localhost is located in
+                    "10.0.2.2"
+                }
+
+                "http://${localhost}:${LOCALHOST_PORT}/framework-3632d/us-central1/"
             }
             else -> {
-                baseUrl
+                "https://us-central1-framework-3632d.cloudfunctions.net/"
             }
         }
     }
 }
 
-const val USE_LOCALHOST = false
+// TODO: provide test configuration separated from production app
+const val USE_LOCALHOST = true
+const val LOCALHOST_PORT = 5001
+const val LOCALHOST = "localhost"
