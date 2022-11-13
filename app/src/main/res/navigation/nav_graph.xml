@@ -6,5 +6,15 @@
     <fragment
         android:id="@+id/productFragment"
         android:name="com.eahm.feature.product.management.ui.ProductFragment"
-        android:label="ProductFragment" />
+        android:label="ProductFragment">
+        <action
+            android:id="@+id/action_productFragment_to_testingFragment"
+            app:destination="@id/testingFragment"
+            app:popUpTo="@id/testingFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/testingFragment"
+        android:name="com.eahm.testing.TestingFragment"
+        android:label="TestingFragment" />
 </navigation>

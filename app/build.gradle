@@ -4,6 +4,8 @@ plugins {
     id 'kotlin-kapt'
     id 'kotlin-android-extensions' // TODO: deprecated Required to use @Parcelable and Synthetics
     id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs'
+    id 'com.google.gms.google-services'  // Google Services plugin
 }
 
 android {
@@ -53,6 +55,8 @@ dependencies {
     implementation project(path: ':feature-product-management')
 
     implementation project(path: ':core-theme')
+
+    debugImplementation  project(path: ':testing')
 
     implementation "androidx.appcompat:appcompat:1.5.1"
     implementation 'androidx.core:core-ktx:1.9.0'

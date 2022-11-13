@@ -6,6 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.eahm.theme.compose.theme.DeliveryTheme
 
+// TODO: rename to DeliveryAppThemeSurface
 @Composable
 fun AppThemeSurface(
     modifier: Modifier = Modifier,
