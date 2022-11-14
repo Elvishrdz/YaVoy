@@ -25,3 +25,4 @@ include ':feature-product-management'
 enableFeaturePreview("VERSION_CATALOGS")
 include ':core-theme'
 include ':testing'
+include ':core-domain'
