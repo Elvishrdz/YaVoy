@@ -2,6 +2,7 @@ package com.eahm.feature.product.management.data.remote
 
 import com.eahm.feature.product.management.data.model.Product
 import com.eahm.feature.product.management.repository.ProductRepository
+import com.haroldadmin.cnradapter.NetworkResponse
 import okhttp3.FormBody
 import okhttp3.RequestBody
 import javax.inject.Inject
@@ -26,10 +27,9 @@ class ProductRepositoryImpl @Inject constructor(
             body = body,
         )
 
-        return if (result.isSuccessful) {
-            result.body()?.data
-        } else {
-            null
+        return when (result) {
+            is NetworkResponse.Success -> result.body.data
+            else -> null
         }
     }
 }
