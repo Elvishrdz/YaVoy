@@ -1,51 +1,47 @@
 package com.eahm.testing.data.fake
 
-import com.eahm.core.domain.Product
+import com.eahm.core.domain.ProductStatus
+import com.eahm.core.domain.product.Currency
+import com.eahm.core.domain.product.Price
+import com.eahm.core.domain.product.Prices
+import com.eahm.core.domain.product.Product
 
 object FakeDataSource {
 
-    val fakeProductList = listOf<Product>(
+    val products = listOf(
         Product(
             id = "1",
             title = "Test product 1",
             description = "This is a nice test product",
-            /*photos = listOf(),
-            price = Price(
-                currentPriceValueId = "A1",
-                priceValues = listOf(
-                    PriceValue(
+            prices = Prices(
+                activePriceId = "A1",
+                prices = listOf(
+                    Price(
                         id = "A1",
                         value = 1500.000,
                         currency = Currency.CORDOBA,
                     ),
                 ),
             ),
-            priceUnitType = PriceUnitType.UNIT,*/
             providerId = "1",
-            /*updated_at = 0,
-            created_at = 0,
-            status = ProductStatus.AVAILABLE,*/
+            status = ProductStatus.AVAILABLE,
         ),
         Product(
             id = "2",
             title = "Test product 2",
             description = "This is a nice test product",
-            /*photos = listOf(),
-            price = Price(
-                currentPriceValueId = "B1",
-                priceValues = listOf(
-                    PriceValue(
-                        id = "B1",
-                        value = 120500.50,
+            prices = Prices(
+                activePriceId = "A2",
+                prices = listOf(
+                    Price(
+                        id = "A2",
+                        value = 2300.80,
                         currency = Currency.EURO,
                     ),
                 ),
             ),
-            priceUnitType = PriceUnitType.UNIT,*/
             providerId = "2",
-            /*updated_at = 0,
-            created_at = 0,
-            status = ProductStatus.AVAILABLE,*/
-        )
+            status = ProductStatus.AVAILABLE,
+        ),
     )
 }

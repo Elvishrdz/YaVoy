@@ -1,31 +1,28 @@
-package com.eahm.core.domain
+package com.eahm.core.domain.product
 
+import com.eahm.core.domain.ProductStatus
 
 data class Product(
     val id: String,
     val title: String,
-    val description: String? = null,
-    /*val photos: List<ProductImage> = listOf(),
-    val price: Price? = null,
-    val priceUnitType: PriceUnitType = PriceUnitType.UNKNOWN,*/
+    val description: String,
+    val prices: Prices,
     val providerId: String,
+    val status: ProductStatus,
+
+    /*val photos: List<ProductImage> = listOf(),
+    val priceUnitType: PriceUnitType = PriceUnitType.UNKNOWN,*/
     /* val updated_at: Long? = null,
      val created_at: Long? = null,
      val status: ProductStatus = ProductStatus.UNDEFINED*/
-) {
-
-    override fun toString(): String {
-        return "$title\n$description"
-        //return "$title\n$description\n$price / $priceUnitType"
-    }
-}
-
-data class Price(
-    val currentPriceValueId: String,
-    val priceValues: List<PriceValue>,
 )
 
-data class PriceValue(
+data class Prices(
+    val activePriceId: String,
+    val prices: List<Price>,
+)
+
+data class Price(
     val id: String,
     val value: Double,
     val currency: Currency,

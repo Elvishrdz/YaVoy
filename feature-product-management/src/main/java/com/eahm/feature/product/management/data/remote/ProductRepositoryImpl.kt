@@ -1,6 +1,6 @@
 package com.eahm.feature.product.management.data.remote
 
-import com.eahm.core.domain.Product
+import com.eahm.core.domain.product.Product
 import com.eahm.feature.product.management.repository.ProductRepository
 import com.haroldadmin.cnradapter.NetworkResponse
 import okhttp3.FormBody

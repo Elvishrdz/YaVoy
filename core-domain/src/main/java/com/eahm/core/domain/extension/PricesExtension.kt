@@ -1,15 +1,15 @@
-package com.eahm.feature.product.management
+package com.eahm.core.domain.extension
 
-import com.eahm.core.domain.Currency
-import com.eahm.core.domain.Price
+import com.eahm.core.domain.product.Currency
+import com.eahm.core.domain.product.Prices
 import java.text.DecimalFormat
 import java.text.NumberFormat
 import java.util.*
 
-fun Price.getPriceWithCurrency(): String? {
-    return priceValues
+val Prices.priceWithCurrency: String?
+    get() = this.prices
         .find {
-            it.id == this.currentPriceValueId
+            it.id == this.activePriceId
         }?.let {
             try {
                 val nf = NumberFormat
@@ -38,4 +38,3 @@ fun Price.getPriceWithCurrency(): String? {
                 null
             }
         }
-}
