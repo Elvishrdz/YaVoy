@@ -14,8 +14,6 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.Dp
 import com.eahm.feature.product.management.R
-import com.eahm.feature.product.management.data.remote.fake.FakeDataSource
-import com.eahm.feature.product.management.getPriceWithCurrency
 import com.eahm.theme.compose.cardColors
 import com.eahm.theme.compose.cardContentPadding
 import com.eahm.theme.compose.cardElevation
@@ -69,12 +67,11 @@ fun ProductItem(title: String, label: String? = null, onClicked: () -> Unit) {
 @ScreenPreview
 @Composable
 fun PreviewProductItem() {
-    FakeDataSource.fakeProductList.firstOrNull()?.let {
-        DeliveryTheme {
-            ProductItem(
-                title = it.title,
-                label = null // TODO: it.price?.getPriceWithCurrency(),
-            ) {}
-        }
+    DeliveryTheme {
+        ProductItem(
+            title = "Test product 1",
+            label = null, // TODO: it.price?.getPriceWithCurrency(),
+            onClicked = {},
+        )
     }
 }

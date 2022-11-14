@@ -2,8 +2,9 @@ package com.eahm.testing
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.eahm.testing.data.FakeData
+import com.eahm.testing.data.fake.FakeUsers
 import com.eahm.testing.data.FirestoreReferences
+import com.eahm.testing.extension.networkEntity
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -30,12 +31,16 @@ class TestingViewModel @Inject constructor(
         viewModelScope.launch {
             val result = try {
                 firestore.runTransaction { transaction ->
-                    FakeData.users.forEach { testUser ->
-                        transaction.set(
-                            FirestoreReferences.getCollectionUsers(firestore),
-                            testUser,
-                        )
-                    }
+                    FakeUsers.users
+                        .forEach { testUser ->
+                            transaction.set(
+                                FirestoreReferences.getCollectionUsers(firestore),
+                                testUser.networkEntity,
+                            )
+                        }
+
+                    // add new products and safe refs to each provider id
+
 
 
                     "adding users complete"

@@ -1,4 +1,4 @@
-package com.eahm.feature.product.management.data.model
+package com.eahm.core.domain
 
 enum class PriceUnitType {
     UNKNOWN, // for future new incoming unit types

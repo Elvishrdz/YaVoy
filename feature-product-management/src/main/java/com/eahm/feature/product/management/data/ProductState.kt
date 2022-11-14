@@ -1,6 +1,6 @@
 package com.eahm.feature.product.management.data
 
-import com.eahm.feature.product.management.data.model.Product
+import com.eahm.core.domain.Product
 
 sealed interface ProductState {
 

@@ -1,6 +1,6 @@
 package com.eahm.feature.product.management.data.remote
 
-import com.eahm.feature.product.management.data.model.Product
+import com.eahm.core.domain.Product
 import com.haroldadmin.cnradapter.NetworkResponse
 import okhttp3.RequestBody
 import retrofit2.http.Body

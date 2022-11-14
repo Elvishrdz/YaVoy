@@ -12,9 +12,8 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.eahm.core.domain.Product
 import com.eahm.feature.product.management.R
-import com.eahm.feature.product.management.data.model.Product
-import com.eahm.feature.product.management.data.remote.fake.FakeDataSource
 import com.eahm.theme.compose.AppThemeSurface
 import com.eahm.theme.compose.fonts.TextFontH1
 import com.eahm.theme.compose.preview.ScreenPreview
@@ -77,7 +76,7 @@ fun ProductList(
 fun PreviewProductList() {
     AppThemeSurface {
         ProductList(
-            list = FakeDataSource.fakeProductList,
+            list = listOf(),
             gotoProductCreationClicked = {},
         )
     }

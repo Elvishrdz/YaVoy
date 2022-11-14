@@ -1,7 +1,7 @@
 package com.eahm.feature.product.management
 
-import com.eahm.feature.product.management.data.model.Currency
-import com.eahm.feature.product.management.data.model.Price
+import com.eahm.core.domain.Currency
+import com.eahm.core.domain.Price
 import java.text.DecimalFormat
 import java.text.NumberFormat
 import java.util.*

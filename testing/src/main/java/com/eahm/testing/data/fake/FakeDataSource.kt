@@ -1,6 +1,6 @@
-package com.eahm.feature.product.management.data.remote.fake
+package com.eahm.testing.data.fake
 
-import com.eahm.feature.product.management.data.model.Product
+import com.eahm.core.domain.Product
 
 object FakeDataSource {
 
